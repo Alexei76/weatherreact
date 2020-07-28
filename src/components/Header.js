@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 export function Header(){
 return (
     <header className="header">
 <span>Weather App.</span>
 <nav className="navigation">
 <ul>
-<li id="index"><a href="index.html">Home</a></li>
-<li id="list"><a href="list.html">Cities List</a></li>
-<li id="about"><a href="about.html">About</a></li>
+<li id="index"><Link to="/">Home</Link></li>
+<li id="list"><Link to="/list">Cities List</Link></li>
+<li id="about"><Link to="/about">About</Link></li>
 </ul>
 </nav>
 
