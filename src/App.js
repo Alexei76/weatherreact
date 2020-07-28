@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Header, Main, Footer } from './components';
-import { Home, About,NotFound } from './pages';
+import { Header, Footer } from './components';
+import { About, Home, NotFound } from './pages';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,26 +9,39 @@ import {
   Link
 } from "react-router-dom";
 
-
 class App extends Component {
-  render() {
-  return (
-    <Router>
-     <Header/>
-     <Switch>
-     <Route exact path="/"><Home/></Route>
-       <Route path="/about"><About/></Route>
-       
-       <Route path="*"><NotFound/></Route>
+  constructor(props) {
+    super(props);
 
-     </Switch>
-     
-     <Footer/>
-     </Router>
-  
-  );
-}
+    this.state = {
+      selectedCity: localStorage.getItem('selectedCity') || ''
+    }
+  }
+
+  getSelectedCity = (city) => {
+    this.setState({ selectedCity: city}, () => { localStorage.setItem('selectedCity', this.state.selectedCity)})
+  }
+
+  render() {
+    return (
+      <Router>
+        <Header selectedCity={this.state.selectedCity} getSelectedCity={this.getSelectedCity} />
+        <Switch>
+          <Route exact path="/"> 
+            <Home selectedCity={this.state.selectedCity} getSelectedCity={this.getSelectedCity} />
+          </Route>
+          <Route path="/about"> 
+            <About />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+
+    );
+  }
 }
 
 export default App;
-

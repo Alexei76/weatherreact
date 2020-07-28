@@ -1,5 +1,8 @@
 import React from 'react';
-export function Home(){
+import { Main } from '../components/Main';
 
-    return(<h1>Home Page</h1>)
+export function Home(props) {
+    return (
+        <Main selectedCity={props.selectedCity} getSelectedCity={props.getSelectedCity} />
+    )
 }
