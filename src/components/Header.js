@@ -1,9 +1,9 @@
 import React from 'react';
 export function Header(){
 return (
-    <header class="header">
+    <header className="header">
 <span>Weather App.</span>
-<nav class="navigation">
+<nav className="navigation">
 <ul>
 <li id="index"><a href="index.html">Home</a></li>
 <li id="list"><a href="list.html">Cities List</a></li>
