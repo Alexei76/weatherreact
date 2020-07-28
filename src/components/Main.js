@@ -1,7 +1,11 @@
 import React from 'react';
 export function Main() {
     return (
-        <div> Main </div>
+        <main className="locations">
+            
+        <img id="image-placeholder" src="https://wallpaperstock.net/wallpapers/thumbs1/56955hd.jpg" alt="city skyline" />
+
+</main>
 
 
    )
