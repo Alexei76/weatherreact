@@ -4,7 +4,7 @@ import { CitySelector } from './CitySelector'
 export function Header(props) {
     return (
         <header className="header">
-            <span>Weather App</span>
+            <span><NavLink exact activeClassName="active" to="/">Weather Ap</NavLink></span>
             <CitySelector selectedCity={props.selectedCity} getSelectedCity={props.getSelectedCity} />
             <nav className="navigation">
                 <ul>
