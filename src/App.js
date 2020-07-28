@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Header, Main, Footer } from './components';
-import { Home, About } from './pages';
+import { Home, About,NotFound } from './pages';
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,7 +19,7 @@ class App extends Component {
      <Route exact path="/"><Home/></Route>
        <Route path="/about"><About/></Route>
        
-       
+       <Route path="*"><NotFound/></Route>
 
      </Switch>
      
